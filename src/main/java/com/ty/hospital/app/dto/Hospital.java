@@ -17,8 +17,17 @@ public class Hospital {
 	private String hospital_name;
 	private String hospital_website;
 	private String hospital_gst;
-	@OneToMany
+	@OneToMany(mappedBy = "hospital")
 	private List<Branch> branchs;
+
+	public List<Branch> getBranchs() {
+		return branchs;
+	}
+
+	public void setBranchs(List<Branch> branchs) {
+		this.branchs = branchs;
+	}
+
 	public String getHospital_gst() {
 		return hospital_gst;
 	}

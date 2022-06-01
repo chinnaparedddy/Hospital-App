@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Address {
@@ -15,42 +17,56 @@ public class Address {
 	private String state;
 	private String country;
 	private long pincode;
+	@OneToOne
+	@JoinColumn(name = "branch_id")
 	private Branch branch;
+
 	public int getAddress_id() {
 		return address_id;
 	}
+
 	public void setAddress_id(int address_id) {
 		this.address_id = address_id;
 	}
+
 	public String getStreet() {
 		return street;
 	}
+
 	public void setStreet(String street) {
 		this.street = street;
 	}
+
 	public String getState() {
 		return state;
 	}
+
 	public void setState(String state) {
 		this.state = state;
 	}
+
 	public String getCountry() {
 		return country;
 	}
+
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
 	public long getPincode() {
 		return pincode;
 	}
+
 	public void setPincode(long pincode) {
 		this.pincode = pincode;
 	}
+
 	public Branch getBranch() {
 		return branch;
 	}
+
 	public void setBranch(Branch branch) {
 		this.branch = branch;
 	}
-	
+
 }

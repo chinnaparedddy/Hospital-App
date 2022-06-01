@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -19,12 +20,14 @@ public class Branch {
 	private String branch_name;
 	private long phone;
 	private String email;
-	@OneToOne
+	@OneToOne(mappedBy = "branch")
 	private Address address;
 	@ManyToOne
+	@JoinColumn
 	private Hospital hospital;
-	@OneToMany
+	@OneToMany(mappedBy = "branch")
 	private List<Encounter> encounter;
+	@OneToMany(mappedBy = "branch")
 	private List<User> user;
 
 	public int getBranch_id() {

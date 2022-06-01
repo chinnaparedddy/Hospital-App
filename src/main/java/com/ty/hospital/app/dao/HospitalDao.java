@@ -9,3 +9,4 @@ public interface HospitalDao {
 	Hospital updateHospitalById(int hospital_id,Hospital hospital);
 	boolean deleteHospitalById(int hospital_id);
 }
+ 

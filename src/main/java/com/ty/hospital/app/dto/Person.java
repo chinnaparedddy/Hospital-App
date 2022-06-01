@@ -17,40 +17,47 @@ public class Person {
 	private String person_name;
 	private long person_phone;
 	private String person_email;
-	@OneToMany
+	@OneToMany(mappedBy = "person")
 	private List<Encounter> encounter;
-	
-	
+
 	public List<Encounter> getEncounter() {
 		return encounter;
 	}
+
 	public void setEncounter(List<Encounter> encounter) {
 		this.encounter = encounter;
 	}
+
 	public int getPerson_id() {
 		return person_id;
 	}
+
 	public void setPerson_id(int person_id) {
 		this.person_id = person_id;
 	}
+
 	public String getPerson_name() {
 		return person_name;
 	}
+
 	public void setPerson_name(String person_name) {
 		this.person_name = person_name;
 	}
+
 	public long getPerson_phone() {
 		return person_phone;
 	}
+
 	public void setPerson_phone(long person_phone) {
 		this.person_phone = person_phone;
 	}
+
 	public String getPerson_email() {
 		return person_email;
 	}
+
 	public void setPerson_email(String person_email) {
 		this.person_email = person_email;
 	}
-	
-	
+
 }

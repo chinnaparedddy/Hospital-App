@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -21,8 +22,8 @@ public class Observation {
 	private String status;
 	private String remarks;
 	
-	private User user;
 	@ManyToOne
+	@JoinColumn
 	private Encounter encounter;
 	
 	
@@ -57,12 +58,7 @@ public class Observation {
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
+	
 	
 	
 }

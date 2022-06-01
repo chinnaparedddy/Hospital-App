@@ -10,6 +10,7 @@ public interface BranchDao {
 	Branch getBranchById(int branch_id);
 	boolean branchDeleteById(int branch_id);
 	Branch updateBranchById(int branch_id,Branch branch);
-	List<Branch> getAllBranchs();
+	List<Branch> getAllBranchsByHospitalId(int hospital_id);
 	List<Branch> getBranchByState(String state);
+	
 }
